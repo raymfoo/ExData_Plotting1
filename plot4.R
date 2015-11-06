@@ -26,7 +26,7 @@ loadData <- function(){
 generateGraph <- function(){
   png(filename = "plot4.png")
   par(cex=0.75)
-  par(bg="white")
+  par(bg="NA")
   par(mfrow=c(2,2))
   
   #Plot 1
