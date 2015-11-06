@@ -24,13 +24,13 @@ loadData <- function(){
 
 #This function draws the graph and export as plot3.png
 generateGraph <- function(){
-  par(cex=1)
-  par(bg=NA)
+  png(filename = "plot3.png")
+  par(cex=0.75)
+  par(bg="NA")
   with(electricData, plot(fTime, Sub_metering_1, type = "l", ylab = "Energy sub metering", xlab = NA))
   with(electricData, lines(fTime, Sub_metering_2, col = "red"))
   with(electricData, lines(fTime, Sub_metering_3, col = "blue"))
   legend("topright", lty = c(1,1), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black", "red", "blue"))
-  dev.copy(png, file = "plot3.png")
   dev.off()
 }
 
