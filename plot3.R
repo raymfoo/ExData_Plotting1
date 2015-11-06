@@ -24,7 +24,7 @@ loadData <- function(){
 
 #This function draws the graph and export as plot3.png
 generateGraph <- function(){
-  par(cex=0.75)
+  par(cex=1)
   par(bg=NA)
   with(electricData, plot(fTime, Sub_metering_1, type = "l", ylab = "Energy sub metering", xlab = NA))
   with(electricData, lines(fTime, Sub_metering_2, col = "red"))
