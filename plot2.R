@@ -25,7 +25,7 @@ loadData <- function(){
 #This function draws the graph and export as plot2.png
 generateGraph <- function(){
   par(cex=0.75)
-  par(mar=c(5.1,6.1,4.1,2.1))
+  par(bg=NA)
   with(electricData, plot(fTime, Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = NA))
   dev.copy(png, file = "plot2.png")
   dev.off()

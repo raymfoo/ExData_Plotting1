@@ -1,5 +1,5 @@
 # ==================================================
-# Plot 1.R
+# Plot 3.R
 # Created by : Raymond Foo
 # Created on : 2015-11-07
 # ==================================================
@@ -22,12 +22,15 @@ loadData <- function(){
 }
 
 
-#This function draws the graph and export as plot1.png
+#This function draws the graph and export as plot3.png
 generateGraph <- function(){
   par(cex=0.75)
   par(bg=NA)
-  hist(electricData$Global_active_power, main = "Global Active Power", xlab = "Global Active Power(kilowatts)", col = "red")  
-  dev.copy(png, file = "plot1.png")
+  with(electricData, plot(fTime, Sub_metering_1, type = "l", ylab = "Energy sub metering", xlab = NA))
+  with(electricData, lines(fTime, Sub_metering_2, col = "red"))
+  with(electricData, lines(fTime, Sub_metering_3, col = "blue"))
+  legend("topright", lty = c(1,1), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black", "red", "blue"))
+  dev.copy(png, file = "plot3.png")
   dev.off()
 }
 
